@@ -12,10 +12,10 @@ export function useTheme() {
 
 const darkTheme = {
   backgroundColor: "black",
-  fontColor: "white",
+  fontColor: "#ff7003",
 };
 
 const lightTheme = {
   backgroundColor: "black",
-  fontColor: "orange",
+  fontColor: "#ff7003",
 };

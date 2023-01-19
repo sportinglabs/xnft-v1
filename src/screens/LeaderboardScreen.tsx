@@ -1,34 +1,115 @@
-import { Text, View, StyleSheet, Image } from "react-native";
-import tw from "twrnc";
-
-import { Screen } from "../components/Screen";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { BoardItem } from "../components/BoardItem";
 
 export function LeaderboardScreen() {
+  const items = [
+    { rank: "1", name: "rustintern", total: "1200", last: "10" },
+    { rank: "2", name: "Lazycipher", total: "1100", last: "10" },
+    { rank: "3", name: "dinesh", total: "1000", last: "10" },
+    { rank: "4", name: "M2DT", total: "900", last: "10" },
+    { rank: "5", name: "Kulture", total: "800", last: "10" },
+    { rank: "6", name: "Brandon", total: "700", last: "10" },
+    { rank: "7", name: "John", total: "600", last: "10" },
+    { rank: "1", name: "rustintern", total: "1200", last: "10" },
+    { rank: "2", name: "Lazycipher", total: "1100", last: "10" },
+    { rank: "3", name: "dinesh", total: "1000", last: "10" },
+    { rank: "4", name: "M2DT", total: "900", last: "10" },
+    { rank: "5", name: "Kulture", total: "800", last: "10" },
+    { rank: "6", name: "Brandon", total: "700", last: "10" },
+    { rank: "7", name: "John", total: "600", last: "10" },
+    { rank: "1", name: "rustintern", total: "1200", last: "10" },
+    { rank: "2", name: "Lazycipher", total: "1100", last: "10" },
+    { rank: "3", name: "dinesh", total: "1000", last: "10" },
+    { rank: "4", name: "M2DT", total: "900", last: "10" },
+    { rank: "5", name: "Kulture", total: "800", last: "10" },
+    { rank: "6", name: "Brandon", total: "700", last: "10" },
+    { rank: "7", name: "John", total: "600", last: "10" },
+    { rank: "1", name: "rustintern", total: "1200", last: "10" },
+    { rank: "2", name: "Lazycipher", total: "1100", last: "10" },
+    { rank: "3", name: "dinesh", total: "1000", last: "10" },
+    { rank: "4", name: "M2DT", total: "900", last: "10" },
+    { rank: "5", name: "Kulture", total: "800", last: "10" },
+    { rank: "6", name: "Brandon", total: "700", last: "10" },
+    { rank: "7", name: "John", total: "600", last: "10" },
+  ];
   return (
-    <View style={styles.home}>
-      <View style={styles.homeContent}>
-        <View style={styles.homeLogo}>
-          <Image
-            source={require("../media/logo.png")}
-            style={styles.homeLogoImage}
-          />
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+    >
+      <View style={styles.leaderboard}>
+        <View style={styles.leaderboardContent}>
+          <View>
+            <View style={styles.leaderboardTitleContainer}>
+              <Text style={styles.leaderboardTitle}>Leaderboard</Text>
+            </View>
+            <View style={styles.leaderboardCategoryRow}>
+              <View style={styles.leaderboardCategory}>
+                <Text style={styles.leaderboardCategoryName}>#</Text>
+              </View>
+              <View style={styles.leaderboardCategory}>
+                <Text style={styles.leaderboardCategoryName}>Name</Text>
+              </View>
+              <View style={styles.leaderboardCategory}>
+                <Text style={styles.leaderboardCategoryName}>Total</Text>
+              </View>
+              <View style={styles.leaderboardCategory}>
+                <Text style={styles.leaderboardCategoryName}>Last race</Text>
+              </View>
+            </View>
+            {items.map((item, index) => (
+              <BoardItem
+                rank={item.rank}
+                name={item.name}
+                total={item.total}
+                last={item.last}
+                key={index}
+              />
+            ))}
+          </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
-  home: {
-    display: "flex",
-    alignItems: "center",
+  leaderboard: {
+    flexDirection: "row",
+    alignItems: "flex-start",
     justifyContent: "center",
     margin: "",
     padding: "0",
     backgroundColor: "black",
     minHeight: "100vh",
   },
-  homeContent: {},
-  homeLogo: {},
-  homeLogoImage: { opacity: 1, width: 200, height: 200,  },
-  homeLogoButton: {},
+  leaderboardContent: {
+    paddingTop: "15vh",
+  },
+  leaderboardTitle: {
+    color: "#ff7003",
+    fontSize: 32,
+    fontWeight: "800",
+    textAlign: "center",
+  },
+  leaderboardTitleContainer: {
+    width: "90vw",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  leaderboardCategoryRow: {
+    width: "90vw",
+    marginTop: 5,
+    marginBottom: 5,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "20px",
+  },
+  leaderboardCategory: {},
+  leaderboardCategoryName: {
+    color: "#ff7003",
+    fontWeight: "800",
+    textAlign: "left",
+  },
 });
