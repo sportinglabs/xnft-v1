@@ -105,20 +105,22 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     width: "90px",
   },
-  stakeDetailText: { color: "#ff7003", fontFamily: "Inter_400Regular" },
+  stakeDetailText: { color: "#ff7003", fontFamily: "Kanit_400Regular" },
+  
   stakeButton: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     width: "330px",
     marginTop: "10px",
-    padding: "20px",
+    paddingTop: "10px",
+    paddingBottom: "10px",
     borderWidth: 0,
     borderRadius: 10,
     textAlign: "center",
   },
   stakeButtonText: {
-    fontFamily: "Inter_600SemiBold",
-    fontSize: 18,
+    fontFamily: "Kanit_600SemiBold",
+    fontSize: 24,
   },
 });

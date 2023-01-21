@@ -10,6 +10,9 @@ export function HomeScreen() {
             style={styles.homeLogoImage}
           />
         </View>
+        <View>
+          <Text style={{ textAlign: "center",color:"white",fontFamily:"Kanit_400Regular" }}>Racing, on Solana.</Text>
+        </View>
       </View>
     </View>
   );
@@ -26,6 +29,6 @@ const styles = StyleSheet.create({
   },
   homeContent: {},
   homeLogo: {},
-  homeLogoImage: { opacity: 1, width: 200, height: 200},
+  homeLogoImage: { opacity: 1, width: 200, height: 200 },
   homeLogoButton: {},
 });

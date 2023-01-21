@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "800",
     textAlign: "center",
-    fontFamily: "Inter_900Black",
+    fontFamily: "Kanit_600SemiBold",
   },
   leaderboardTitleContainer: {
     flexDirection: "row",
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   },
   leaderboardCategoryName: {
     color: "#f5bc90",
-    fontFamily: "Inter_600SemiBold",
+    fontFamily: "Kanit_400Regular",
   },
   leaderboardCellRank: {
     flexDirection: "row",

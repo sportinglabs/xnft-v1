@@ -64,5 +64,5 @@ const styles = StyleSheet.create({
     width: "63px",
     margin: 1,
   },
-  boardCellText: { color: "#ff7003", fontFamily: "Inter_400Regular" },
+  boardCellText: { color: "#ff7003", fontFamily: "Kanit_400Regular" },
 });

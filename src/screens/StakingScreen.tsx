@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "800",
     textAlign: "center",
-    fontFamily: "Inter_900Black",
+    fontFamily: "Kanit_600SemiBold",
+    
   },
   stakingTitleContainer: {
     width: "100%",
