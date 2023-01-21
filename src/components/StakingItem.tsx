@@ -1,11 +1,13 @@
-import { Text, Image, View, StyleSheet } from "react-native";
+import { useState } from "react";
+import { Text, Image, View, StyleSheet, Pressable } from "react-native";
 
 export function StakingItem(props: {
   name: string;
-  stakedTime: string;
-  earnedAmount: string;
+  rate: number;
+  earnedAmount: number;
   imageFile: string;
 }) {
+  const [staked, setStaked] = useState(false);
   return (
     <View style={styles.stakingItem}>
       <View>
@@ -17,16 +19,35 @@ export function StakingItem(props: {
         </View>
         <View style={styles.stakeDetails}>
           <View style={styles.stakeDetailName}>
-            <Text style={styles.stakeDetailText}>Red Bull RB9</Text>
+            <Text style={styles.stakeDetailText}>{props.name}</Text>
           </View>
           <View style={styles.stakeDetailRate}>
-            <Text style={styles.stakeDetailText}>◎10/day</Text>
+            <Text style={styles.stakeDetailText}>
+              ◎{props.rate.toString()}/day
+            </Text>
           </View>
           <View style={styles.stakeDetailEarned}>
-            <Text style={styles.stakeDetailText}>◎420</Text>
+            <Text style={styles.stakeDetailText}>
+              ◎{props.earnedAmount.toString()}
+            </Text>
           </View>
         </View>
-        <button style={styles.stakeButton}>Stake</button>
+        <Pressable
+          onPress={() => {
+            setStaked(!staked);
+          }}
+          style={({ pressed }) => [
+            {
+              backgroundColor: pressed ? "#1f1f1f" : "#ff7003",
+              color: pressed ? "white" : "black",
+            },
+            styles.stakeButton,
+          ]}
+        >
+          <Text style={styles.stakeButtonText}>
+            {staked ? "unstake" : "stake"}
+          </Text>
+        </Pressable>
       </View>
     </View>
   );
@@ -87,15 +108,17 @@ const styles = StyleSheet.create({
   stakeDetailText: { color: "#ff7003", fontFamily: "Inter_400Regular" },
   stakeButton: {
     flexDirection: "row",
-    backgroundColor: "#ff7003",
-    color: "black",
+    alignItems: "center",
+    justifyContent: "center",
     width: "330px",
     marginTop: "10px",
     padding: "20px",
     borderWidth: 0,
     borderRadius: 10,
     textAlign: "center",
-    fontFamily:"Inter_600SemiBold",
-    fontSize:18
+  },
+  stakeButtonText: {
+    fontFamily: "Inter_600SemiBold",
+    fontSize: 18,
   },
 });
