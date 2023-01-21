@@ -1,7 +1,4 @@
 import { Text, View, StyleSheet, Image } from "react-native";
-import tw from "twrnc";
-
-import { Screen } from "../components/Screen";
 
 export function HomeScreen() {
   return (

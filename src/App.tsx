@@ -3,7 +3,12 @@ import { RecoilRoot } from "recoil";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useFonts, Inter_900Black } from "@expo-google-fonts/dev";
+import {
+  useFonts,
+  Inter_900Black,
+  Inter_600SemiBold,
+  Inter_400Regular,
+} from "@expo-google-fonts/dev";
 
 import { HomeScreen } from "./screens/HomeScreen";
 import { StakingScreen } from "./screens/StakingScreen";
@@ -55,7 +60,6 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-      
         name="Leaderboard"
         component={LeaderboardScreen}
         options={{
@@ -72,6 +76,8 @@ function TabNavigator() {
 
 function App() {
   let [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_600SemiBold,
     Inter_900Black,
   });
 

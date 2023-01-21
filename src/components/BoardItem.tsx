@@ -8,16 +8,16 @@ export function BoardItem(props: {
 }) {
   return (
     <View style={styles.boardItem}>
-      <View style={styles.boardCell}>
+      <View style={styles.boardCellRank}>
         <Text style={styles.boardCellText}>{props.rank}</Text>
       </View>
-      <View style={styles.boardCell}>
+      <View style={styles.boardCellName}>
         <Text style={styles.boardCellText}>{props.name}</Text>
       </View>
-      <View style={styles.boardCell}>
+      <View style={styles.boardCellTotal}>
         <Text style={styles.boardCellText}>◎{props.total}</Text>
       </View>
-      <View style={styles.boardCell}>
+      <View style={styles.boardCellLast}>
         <Text style={styles.boardCellText}>◎{props.last}</Text>
       </View>
     </View>
@@ -26,14 +26,43 @@ export function BoardItem(props: {
 const styles = StyleSheet.create({
   boardItem: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
     backgroundColor: "#ff7003",
-    width: "90vw",
-    margin: "5px",
+    width: "350px",
+    marginTop: "5px",
+    marginBottom: "5px",
     padding: "20px",
     borderRadius: 10,
+    textAlign: "left",
   },
-  boardCell: {},
-  boardCellText: { color: "black", fontWeight: "800" },
+
+  //total 310px
+  boardCellRank: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "30px",
+    margin: 1,
+  },
+  boardCellName: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "150px",
+    margin: 1,
+  },
+  boardCellTotal: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    width: "63px",
+    margin: 1,
+  },
+  boardCellLast: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    width: "63px",
+    margin: 1,
+  },
+  boardCellText: { color: "black", fontFamily: "Inter_400Regular" },
 });

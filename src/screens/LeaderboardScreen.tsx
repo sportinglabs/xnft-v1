@@ -44,17 +44,17 @@ export function LeaderboardScreen() {
               <Text style={styles.leaderboardTitle}>Leaderboard</Text>
             </View>
             <View style={styles.leaderboardCategoryRow}>
-              <View style={styles.leaderboardCategory}>
+              <View style={styles.leaderboardCellRank}>
                 <Text style={styles.leaderboardCategoryName}>#</Text>
               </View>
-              <View style={styles.leaderboardCategory}>
+              <View style={styles.leaderboardCellName}>
                 <Text style={styles.leaderboardCategoryName}>Name</Text>
               </View>
-              <View style={styles.leaderboardCategory}>
+              <View style={styles.leaderboardCellTotal}>
                 <Text style={styles.leaderboardCategoryName}>Total</Text>
               </View>
-              <View style={styles.leaderboardCategory}>
-                <Text style={styles.leaderboardCategoryName}>Last race</Text>
+              <View style={styles.leaderboardCellLast}>
+                <Text style={styles.leaderboardCategoryName}>Last</Text>
               </View>
             </View>
             {items.map((item, index) => (
@@ -90,26 +90,52 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "800",
     textAlign: "center",
+    fontFamily: "Inter_900Black",
   },
   leaderboardTitleContainer: {
-    width: "90vw",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
   },
   leaderboardCategoryRow: {
-    width: "90vw",
-    marginTop: 5,
-    marginBottom: 5,
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    width: "350px",
+    marginTop: "5px",
+    marginBottom: "5px",
     padding: "20px",
+    borderRadius: 10,
+    textAlign: "left",
   },
-  leaderboardCategory: {},
   leaderboardCategoryName: {
     color: "#ff7003",
-    fontWeight: "800",
-    textAlign: "left",
+    fontFamily: "Inter_600SemiBold",
+  },
+  leaderboardCellRank: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "30px",
+    margin: 1,
+  },
+  leaderboardCellName: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "150px",
+    margin: 1,
+  },
+  leaderboardCellTotal: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    width: "63px",
+    margin: 1,
+  },
+  leaderboardCellLast: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    width: "63px",
+    margin: 1,
   },
 });
