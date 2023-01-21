@@ -15,7 +15,18 @@ export function StakingItem(props: {
             style={styles.stakingItemImage}
           />
         </View>
-        <View></View>
+        <View style={styles.stakeDetails}>
+          <View style={styles.stakeDetailName}>
+            <Text style={styles.stakeDetailText}>Red Bull RB9</Text>
+          </View>
+          <View style={styles.stakeDetailRate}>
+            <Text style={styles.stakeDetailText}>◎10/day</Text>
+          </View>
+          <View style={styles.stakeDetailEarned}>
+            <Text style={styles.stakeDetailText}>◎420</Text>
+          </View>
+        </View>
+        <button style={styles.stakeButton}>Stake</button>
       </View>
     </View>
   );
@@ -25,11 +36,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#ff7003",
+    backgroundColor: "#0a0a0a",
     width: "350px",
-    margin: "5px",
-    padding: "2px",
-    borderRadius: 0,
+    marginTop: "5px",
+    marginBottom: "5px",
+    padding: "10px",
+    borderRadius: 20,
   },
   stakingItemImageContainer: {
     flexDirection: "row",
@@ -38,8 +50,52 @@ const styles = StyleSheet.create({
   },
   stakingItemImage: {
     opacity: 1,
-    minWidth: "346px",
+    minWidth: "330px",
     minHeight: "170px",
-    borderRadius: 0,
+    borderRadius: 10,
+  },
+
+  stakeDetails: {
+    flexDirection: "row",
+    backgroundColor: "#1f1f1f",
+    width: "330px",
+    marginTop: "10px",
+    padding: "20px",
+    borderRadius: 10,
+    textAlign: "left",
+  },
+
+  //total 310px
+  stakeDetailName: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "110px",
+  },
+  stakeDetailRate: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    width: "90px",
+  },
+  stakeDetailEarned: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    width: "90px",
+  },
+  stakeDetailText: { color: "#ff7003", fontFamily: "Inter_400Regular" },
+  stakeButton: {
+    flexDirection: "row",
+    backgroundColor: "#ff7003",
+    color: "black",
+    width: "330px",
+    marginTop: "10px",
+    padding: "20px",
+    borderWidth: 0,
+    borderRadius: 10,
+    textAlign: "center",
+    fontFamily:"Inter_600SemiBold",
+    fontSize:18
   },
 });

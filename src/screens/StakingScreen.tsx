@@ -71,10 +71,11 @@ const styles = StyleSheet.create({
     paddingTop: "15vh",
   },
   stakingTitle: {
-    color: "#ff7003",
+    color: "#FFFFFF",
     fontSize: 32,
     fontWeight: "800",
     textAlign: "center",
+    fontFamily: "Inter_900Black",
   },
   stakingTitleContainer: {
     width: "100%",

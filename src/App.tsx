@@ -7,7 +7,7 @@ import {
   useFonts,
   Inter_900Black,
   Inter_600SemiBold,
-  Inter_400Regular,
+  Inter_400Regular,  
 } from "@expo-google-fonts/dev";
 
 import { HomeScreen } from "./screens/HomeScreen";
