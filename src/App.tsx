@@ -25,11 +25,12 @@ function TabNavigator() {
         tabBarStyle: {
           borderTopWidth: 0,
           backgroundColor: "#000000",
+          padding:"5px",
+          height:"80px"
         },
-        tabBarItemStyle: {
-          backgroundColor: "#0a0a0a",
-          margin: 5,
-          borderRadius: 5,
+        tabBarLabelStyle: {
+          display:"none",
+          fontFamily: "Inter_400Regular",
         },
       }}
     >

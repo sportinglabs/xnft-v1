@@ -26,7 +26,7 @@ export function BoardItem(props: {
 const styles = StyleSheet.create({
   boardItem: {
     flexDirection: "row",
-    backgroundColor: "#ff7003",
+    backgroundColor: "#0a0a0a",
     width: "350px",
     marginTop: "5px",
     marginBottom: "5px",
@@ -64,5 +64,5 @@ const styles = StyleSheet.create({
     width: "63px",
     margin: 1,
   },
-  boardCellText: { color: "black", fontFamily: "Inter_400Regular" },
+  boardCellText: { color: "#ff7003", fontFamily: "Inter_400Regular" },
 });

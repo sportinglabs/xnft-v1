@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     paddingTop: "15vh",
   },
   leaderboardTitle: {
-    color: "#ff7003",
+    color: "white",
     fontSize: 32,
     fontWeight: "800",
     textAlign: "center",
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   leaderboardCategoryName: {
-    color: "#ff7003",
+    color: "#f5bc90",
     fontFamily: "Inter_600SemiBold",
   },
   leaderboardCellRank: {
