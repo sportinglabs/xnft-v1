@@ -10,7 +10,7 @@ import {
   Inter_400Regular,  
   Kanit_100Thin,
   Kanit_400Regular,
-  Kanit_600SemiBold
+  Kanit_600SemiBold, 
 } from "@expo-google-fonts/dev";
 
 import { HomeScreen } from "./screens/HomeScreen";

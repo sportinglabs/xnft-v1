@@ -1,12 +1,23 @@
 import { useState } from "react";
 import { Text, Image, View, StyleSheet, Pressable } from "react-native";
+import axios from "axios";
 
 export function StakingItem(props: {
   name: string;
   rate: number;
   earnedAmount: number;
-  imageFile: string;
+  mintAddress: string;
 }) {
+  const url =
+    "https://api.helius.xyz/v0/tokens/metadata?api-key=6ab23117-c35c-4e3c-94f2-1ec14d058d0d";
+
+  const getMetadata = async () => {
+    const { data } = await axios.post(url, {
+      mintAccounts: ["824ATHhPrv8Zyqt4WKNtLJ3hAaXEWbRN3ukqAH6GALRX"],
+    });
+    console.log("metadata: ", data);
+  };
+
   const [staked, setStaked] = useState(false);
   return (
     <View style={styles.stakingItem}>
@@ -33,7 +44,8 @@ export function StakingItem(props: {
           </View>
         </View>
         <Pressable
-          onPress={() => {
+          onPress={async () => {
+            await getMetadata();
             setStaked(!staked);
           }}
           style={({ pressed }) => [
@@ -106,7 +118,7 @@ const styles = StyleSheet.create({
     width: "90px",
   },
   stakeDetailText: { color: "#ff7003", fontFamily: "Kanit_400Regular" },
-  
+
   stakeButton: {
     flexDirection: "row",
     alignItems: "center",
