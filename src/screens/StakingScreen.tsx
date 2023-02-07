@@ -1,7 +1,12 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { StakingItem } from "../components/StakingItem";
+import { usePools } from "../hooks/usePools";
 
 export function StakingScreen() {
+  const { pools, loading, error } = usePools();
+
+  console.log(pools);
+
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
