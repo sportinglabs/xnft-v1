@@ -6,7 +6,7 @@ export function StakingItem(props: {
   name: string;
   rate: number;
   earnedAmount: number;
-  mintAddress: string;
+  stakeFunction: () => Promise<void>;
 }) {
   const url =
     "https://api.helius.xyz/v0/tokens/metadata?api-key=6ab23117-c35c-4e3c-94f2-1ec14d058d0d";
@@ -45,7 +45,7 @@ export function StakingItem(props: {
         </View>
         <Pressable
           onPress={async () => {
-            await getMetadata();
+            await props.stakeFunction();
             setStaked(!staked);
           }}
           style={({ pressed }) => [

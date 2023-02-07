@@ -1,12 +1,31 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { usePublicKey } from "react-xnft";
+import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
+
 import { StakingItem } from "../components/StakingItem";
 import { usePools } from "../hooks/usePools";
+import { stake } from "../sdk";
 
 export function StakingScreen() {
   const { pools, loading, error } = usePools();
 
-  console.log(pools);
+  const stakeFunction = async () => {
+    try {
+      const connection = new Connection(clusterApiUrl("devnet")); //create a connection
+      const wallet = usePublicKey(); //initialize wallet
+      console.log(wallet.toBase58()); //test wallet
 
+      const response = await stake(
+        connection,
+        wallet,
+        new PublicKey("AuSEFWEjek6qveQotqHRZxFhGRdEb1Wwub4gSCqaqLpT")
+      ); //execute staking function
+
+      console.log(response); //print out
+    } catch (e) {
+      console.error(e);
+    }
+  };
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -22,19 +41,19 @@ export function StakingScreen() {
               name={"Red Bull RB9"}
               rate={10}
               earnedAmount={430}
-              imageFile={"../media/car.png"}
+              stakeFunction={stakeFunction}
             />
             <StakingItem
               name={"Red Bull RB9"}
               rate={10}
               earnedAmount={430}
-              imageFile={"../media/car.png"}
+              stakeFunction={stakeFunction}
             />
             <StakingItem
               name={"Red Bull RB9"}
               rate={10}
               earnedAmount={430}
-              imageFile={"../media/car.png"}
+              stakeFunction={stakeFunction}
             />
           </View>
         </View>
@@ -61,7 +80,6 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     textAlign: "center",
     fontFamily: "Kanit_600SemiBold",
-    
   },
   stakingTitleContainer: {
     width: "100%",
