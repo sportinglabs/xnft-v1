@@ -1,11 +1,14 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { StakingItem } from "../components/StakingItem";
 import { usePools } from "../hooks/usePools";
+import { useNFTs } from "../hooks/useNFTs";
 
 export function StakingScreen() {
-  const { pools, loading, error } = usePools();
-
+  const pools = usePools();
   console.log(pools);
+
+  const nfts = useNFTs();
+  console.log(nfts);
 
   return (
     <ScrollView
