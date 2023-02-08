@@ -1,18 +1,24 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
-import { usePublicKey } from "react-xnft";
-import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
+import { usePublicKeys, useSolanaConnection } from "../hooks/xnft-hooks";
+import { PublicKey } from "@solana/web3.js";
 
 import { StakingItem } from "../components/StakingItem";
 import { usePools } from "../hooks/usePools";
 import { stake } from "../sdk";
+import { useNFTs } from "../hooks/useNFTs";
 
 export function StakingScreen() {
-  const { pools, loading, error } = usePools();
+  const pools = usePools();
+  console.log(pools);
 
+  const nfts = useNFTs();
+  console.log(nfts);
+  
   const stakeFunction = async () => {
+
     try {
-      const connection = new Connection(clusterApiUrl("devnet")); //create a connection
-      const wallet = usePublicKey(); //initialize wallet
+      const connection = useSolanaConnection() //create a connection
+      const wallet = usePublicKeys(); //initialize wallet
       console.log(wallet.toBase58()); //test wallet
 
       const response = await stake(

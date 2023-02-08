@@ -1,5 +1,5 @@
-import { useEffect, useState, useMemo } from "react";
-import { usePublicKey } from "react-xnft"
+import { useEffect, useState } from "react";
+import { useSolanaConnection, usePublicKeys } from "../hooks/xnft-hooks"
 import { getNFTsByOwner } from "../utils/nfts";
 
 export const useNFTs = () => {
@@ -7,17 +7,8 @@ export const useNFTs = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const publicKey = usePublicKey();
-  // @ts-ignore
-  const connection = window.xnft.solana.connection
-  const wallet = {
-    publicKey,
-    // @ts-ignore
-    signAllTransactions: window.xnft.signAllTransactions,
-    // @ts-ignore
-    signTransaction: window.xnft.signTransaction,
-    connected: true,
-  }
+  const publicKey = usePublicKeys();
+  const connection = useSolanaConnection();
 
   useEffect(() => {
     const fetchNFTs = async () => {
@@ -37,7 +28,7 @@ export const useNFTs = () => {
 
     console.log("fetching nfts");
     fetchNFTs()
-  })
+  }, [connection, publicKey])
 
   return { nfts, loading, error }
 }

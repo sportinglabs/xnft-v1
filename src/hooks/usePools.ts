@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { getAllPools } from "../sdk/";
+import { useSolanaConnection, usePublicKeys } from "../hooks/xnft-hooks";
 
 export const usePools = () => {
   const [pools, setPools] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  // @ts-ignore
-  const connection = window.xnft.solana.connection
+  const publicKey = usePublicKeys();
+  const connection = useSolanaConnection();
 
   useEffect(() => {
     const fetchPools = async () => {
@@ -27,7 +28,7 @@ export const usePools = () => {
 
     console.log("fetching pools");
     fetchPools()
-  })
+  }, [])
 
   return { pools, loading, error }
 }
