@@ -1,10 +1,6 @@
 import { Text, View, StyleSheet, Image } from "react-native";
-import { useNFTs } from "../hooks/useNFTs";
 
 export function HomeScreen() {
-  // const { nfts, loading, error } = useNFTs();
-  // console.log(nfts);
-
   return (
     <View style={styles.home}>
       <View style={styles.homeContent}>

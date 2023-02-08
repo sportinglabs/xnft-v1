@@ -13,21 +13,22 @@ export function StakingScreen() {
 
   const nfts = useNFTs();
   console.log(nfts);
+
+  const connection = useSolanaConnection() //create a connection
+  const wallet = usePublicKeys(); //initialize wallet
   
   const stakeFunction = async () => {
 
     try {
-      const connection = useSolanaConnection() //create a connection
-      const wallet = usePublicKeys(); //initialize wallet
       console.log(wallet.toBase58()); //test wallet
 
-      const response = await stake(
-        connection,
-        wallet,
-        new PublicKey("AuSEFWEjek6qveQotqHRZxFhGRdEb1Wwub4gSCqaqLpT")
-      ); //execute staking function
+      // const response = await stake(
+      //   connection,
+      //   wallet,
+      //   new PublicKey("AuSEFWEjek6qveQotqHRZxFhGRdEb1Wwub4gSCqaqLpT")
+      // ); //execute staking function
 
-      console.log(response); //print out
+      // console.log(response); //print out
     } catch (e) {
       console.error(e);
     }
