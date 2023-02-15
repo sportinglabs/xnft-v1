@@ -7,10 +7,10 @@ import {
   useFonts,
   Inter_900Black,
   Inter_600SemiBold,
-  Inter_400Regular,  
+  Inter_400Regular,
   Kanit_100Thin,
   Kanit_400Regular,
-  Kanit_600SemiBold, 
+  Kanit_600SemiBold,
 } from "@expo-google-fonts/dev";
 
 import { HomeScreen } from "./screens/HomeScreen";
@@ -24,16 +24,16 @@ function TabNavigator() {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: "#ff7003",
+        tabBarActiveTintColor: "#24DCA2",
         tabBarStyle: {
           borderTopWidth: 0,
           backgroundColor: "#000000",
-          padding:"5px",
-          height:"80px"
+          padding: "5px",
+          height: "80px",
         },
         tabBarLabelStyle: {
-          display:"none",
-          fontFamily: "Inter_400Regular",
+          display: "none",
+          fontFamily: "jetbrains-bold",
         },
       }}
     >
@@ -80,12 +80,8 @@ function TabNavigator() {
 
 function App() {
   let [fontsLoaded] = useFonts({
-    Inter_400Regular,
-    Inter_600SemiBold,
-    Inter_900Black,
-    Kanit_100Thin,
-    Kanit_400Regular,
-    Kanit_600SemiBold
+    "jetbrains-regular": require("./assets/fonts/jetbrains-regular.ttf"),
+    "sonara-rounded": require("./assets/fonts/sonara-rounded.otf"),
   });
 
   return (

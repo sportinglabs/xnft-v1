@@ -1,6 +1,5 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { usePublicKeys, useSolanaConnection } from "../hooks/xnft-hooks";
-import { PublicKey } from "@solana/web3.js";
 
 import { StakingItem } from "../components/StakingItem";
 import { usePools } from "../hooks/usePools";
@@ -14,11 +13,10 @@ export function StakingScreen() {
   const nfts = useNFTs();
   console.log(nfts);
 
-  const connection = useSolanaConnection() //create a connection
+  const connection = useSolanaConnection(); //create a connection
   const wallet = usePublicKeys(); //initialize wallet
-  
-  const stakeFunction = async () => {
 
+  const stakeFunction = async () => {
     try {
       console.log(wallet.toBase58()); //test wallet
 
@@ -82,11 +80,10 @@ const styles = StyleSheet.create({
     paddingTop: "15vh",
   },
   stakingTitle: {
-    color: "#FFFFFF",
+    color: "#24DCA2",
     fontSize: 32,
-    fontWeight: "800",
     textAlign: "center",
-    fontFamily: "Kanit_600SemiBold",
+    fontFamily: "sonara-rounded",
   },
   stakingTitleContainer: {
     width: "100%",

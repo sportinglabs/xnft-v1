@@ -50,8 +50,7 @@ export function StakingItem(props: {
           }}
           style={({ pressed }) => [
             {
-              backgroundColor: pressed ? "#1f1f1f" : "#ff7003",
-              color: pressed ? "white" : "black",
+              backgroundColor: pressed ? "#1f1f1f" : "#24DCA2",
             },
             styles.stakeButton,
           ]}
@@ -117,7 +116,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     width: "90px",
   },
-  stakeDetailText: { color: "#ff7003", fontFamily: "Kanit_400Regular" },
+  stakeDetailText: { color: "#fff", fontFamily: "jetbrains-regular" },
 
   stakeButton: {
     flexDirection: "row",
@@ -125,14 +124,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "330px",
     marginTop: "10px",
-    paddingTop: "10px",
-    paddingBottom: "10px",
+    paddingTop: "15px",
+    paddingBottom: "15px",
     borderWidth: 0,
     borderRadius: 10,
     textAlign: "center",
   },
   stakeButtonText: {
-    fontFamily: "Kanit_600SemiBold",
-    fontSize: 24,
+    fontFamily: "sonara-rounded",
+    fontSize: 18,
+    color: "black",
   },
 });

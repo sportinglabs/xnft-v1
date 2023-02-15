@@ -6,7 +6,6 @@ export function BoardItem(props: {
   total: string;
   last: string;
 }) {
-
   return (
     <View style={styles.boardItem}>
       <View style={styles.boardCellRank}>
@@ -65,5 +64,5 @@ const styles = StyleSheet.create({
     width: "63px",
     margin: 1,
   },
-  boardCellText: { color: "#ff7003", fontFamily: "Kanit_400Regular" },
+  boardCellText: { color: "white", fontFamily: "jetbrains-regular" },
 });
